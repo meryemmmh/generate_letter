@@ -3,7 +3,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import os
-from generate_letter import generer_lettre
+from generat_letter import generer_lettre
 
 # Liste des champs à remplir
 CHAMPS = ["nom", "date", "objet", "corps"]
@@ -52,3 +52,14 @@ tk.Button(fenetre, text="Générer la lettre", command=lancer_generation).pack(p
 
 # Lancer la fenêtre
 fenetre.mainloop()
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Flask!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
